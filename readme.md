@@ -11,4 +11,4 @@ nice python eval.py --limit 10_000 --ckpt checkpoints/read-WC-def-adj-noun/epoch
 ```
 **dataset.py:** tokenized dataset description
 
-**common...txt:** list of sentence indices to evaluate
+**valids/common...txt:** list of sentence indices to evaluate
