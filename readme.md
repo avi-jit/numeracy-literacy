@@ -1,5 +1,9 @@
 # Numeracy Enhances the Literacy of Language Models
-Anonymous ACL-IJCNLP 2021 Submission
+Accepted to EMNLP 2021.
+
+# Wiki-Convert
+
+A novel dataset of Wikipedia sentences annotated with numbers. Get the data at [this link](https://drive.google.com/drive/folders/1FINtp5yC8J-ObLZ8p1Q0Oij9ttav1w91?usp=sharing).
 
 **train.py:** model description and training
 ```
