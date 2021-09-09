@@ -1,9 +1,15 @@
-# Numeracy Enhances the Literacy of Language Models
-Accepted to EMNLP 2021.
+# Numeracy enhances the Literacy of Language Models
 
-# Wiki-Convert
+## Wiki-Convert
 
 A novel dataset of Wikipedia sentences annotated with numbers. Get the data at [this link](https://drive.google.com/drive/folders/1FINtp5yC8J-ObLZ8p1Q0Oij9ttav1w91?usp=sharing).
+
+Example:
+| Sentence | Number | Unit |
+| --- | --- | --- |
+| U-559 had a displacement of `NUM` `UNIT` while submerged | 871.0 | tonne |
+
+## Code
 
 **train.py:** model description and training
 ```
@@ -16,3 +22,8 @@ nice python eval.py --limit 10_000 --ckpt checkpoints/read-WC-def-adj-noun/epoch
 **dataset.py:** tokenized dataset description
 
 **valids/common...txt:** list of sentence indices to evaluate
+
+## Citation
+
+This paper has been accepted to EMNLP 2021 - we will share the citation and link to Anthology soon. In the meantime, here's a [pdf](https://avi-jit.github.io/Thawani%2BEMNLP2021.pdf) version of the same.
+
