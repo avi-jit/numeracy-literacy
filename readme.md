@@ -25,5 +25,5 @@ nice python eval.py --limit 10_000 --ckpt checkpoints/read-WC-def-adj-noun/epoch
 
 ## Citation
 
-This paper has been accepted to EMNLP 2021 - we will share the citation and link to Anthology soon. In the meantime, here's a [pdf](https://avi-jit.github.io/Thawani%2BEMNLP2021.pdf) version of the same.
+This paper has been accepted to EMNLP 2021 - we will share the citation and link to Anthology soon. In the meantime, [here's a pdf version](https://github.com/avi-jit/numeracy-literacy/blob/main/camera_ready.pdf) of the same.
 
