@@ -1,13 +1,32 @@
 # Numeracy enhances the Literacy of Language Models
 
-## Wiki-Convert
+This repository holds the code and data (Wiki-Convert) for our EMNLP 2021 short paper. We show that magnitude-aware number encoders help language models predict words better, and the results transfer to non-numeric contexts as well. Here are some links to better understand our work:
 
-A novel dataset of Wikipedia sentences annotated with numbers. Get the data at [this link](https://drive.google.com/drive/folders/1FINtp5yC8J-ObLZ8p1Q0Oij9ttav1w91?usp=sharing).
+[Anthology](https://aclanthology.org/2021.emnlp-main.557/) | [PDF](https://aclanthology.org/2021.emnlp-main.557.pdf) | [Slides](https://drive.google.com/file/d/1-GIUOTRLavVzA_ynQ0HqTR_RMq2GezOI/view?usp=sharing) | [Video](https://drive.google.com/file/d/1QluCr79hAHkA_oCwD6JHUBQAQ81rMste/view?usp=sharing) | [Poster](https://drive.google.com/file/d/1DntS8pRlpsRnO3UpYZeo3wzAOJiHLfY1/view?usp=sharing) | [Twitter thread](https://twitter.com/thawani_avijit/status/1434168008046301185) | [ACL21 Reviews](https://drive.google.com/file/d/1IUv9Rk3VqxceP58NyrEENAcr30P0etis/view?usp=sharing) 
+
+Please reach out to me at `thawani@usc.edu` in case you face any issues or just to chat!
+
+## Dataset
+
+**Wiki-Convert**: A novel dataset of Wikipedia sentences annotated with numbers. The easiest way to get the data is via [Huggingface Datasets](https://huggingface.co/docs/datasets/) library. Simply install the datasets library and run `import datasets; ds = load_dataset("usc-isi/WikiConvert")`.
 
 Example:
-| Sentence | Number | Unit |
-| --- | --- | --- |
-| U-559 had a displacement of `NUM` `UNIT` while submerged | 871.0 | tonne |
+| id | comment | offset | length | number |
+| :--- | --- | :---: | :---: | :---: |
+| 0 | With a total of 1500 miles of inland waterways, Alabama has among the most of any state. |16 | 4 |  1500 |
+
+Here, the Wikipedia sentence is provided under the key `comment` and the annotated `number` is provided via its character `offset` and `length`, i.e., `comment[offset:offset+length] = number`. You will find additional keys `UNIQUE_STORY_INDEX` and `magnitude` which are irrelevant and were simply added for consistency with the format of the [Numeracy600K](https://github.com/aistairc/Numeracy-600K) dataset.
+
+Note that when loading from the Datasets library, numbers larger than `sys.maxsize` will be capped to avoid an overflow in PyArrow. For the uncapped version, you may download the json files directly for the [train](https://huggingface.co/datasets/usc-isi/WikiConvert/resolve/main/train_wiki.json), [dev](https://huggingface.co/datasets/usc-isi/WikiConvert/resolve/main/train_wiki.json), and [test](https://huggingface.co/datasets/usc-isi/WikiConvert/resolve/main/train_wiki.json) splits.
+
+The dataset sizes are as follows:
+
+|  | Train | Dev | Test |
+| --- | ---: | ---: | ---: |
+| # examples | 739583 | 92447 | 92449 |
+| file size (MBs) | 169 | 20.9 | 20.5 |
+
+You may also retrieve a larger, unprocessed version of the data at [this link](https://drive.google.com/drive/folders/1FINtp5yC8J-ObLZ8p1Q0Oij9ttav1w91?usp=sharing).
 
 ## Code
 
@@ -24,8 +43,6 @@ nice python eval.py --limit 10_000 --ckpt checkpoints/read-WC-def-adj-noun/epoch
 **valids/common...txt:** list of sentence indices to evaluate
 
 ## Citation
-
-[Anthology](https://aclanthology.org/2021.emnlp-main.557/) | [PDF](https://aclanthology.org/2021.emnlp-main.557.pdf) | [Slides](https://drive.google.com/file/d/1-GIUOTRLavVzA_ynQ0HqTR_RMq2GezOI/view?usp=sharing) | [Video](https://drive.google.com/file/d/1QluCr79hAHkA_oCwD6JHUBQAQ81rMste/view?usp=sharing) | [Poster](https://drive.google.com/file/d/1DntS8pRlpsRnO3UpYZeo3wzAOJiHLfY1/view?usp=sharing) | [Thread](https://twitter.com/thawani_avijit/status/1434168008046301185) | [Code](https://github.com/avi-jit/numeracy-literacy) | [ACL21 Reviews](https://drive.google.com/file/d/1IUv9Rk3VqxceP58NyrEENAcr30P0etis/view?usp=sharing) 
 
 Here's how to cite us for the results or the Wiki-Convert dataset:
 ```
