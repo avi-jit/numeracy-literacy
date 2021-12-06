@@ -8,7 +8,11 @@ Please reach out to me at `thawani@usc.edu` in case you face any issues or just 
 
 ## Dataset
 
-**Wiki-Convert**: A novel dataset of Wikipedia sentences annotated with numbers. The easiest way to get the data is via [Huggingface Datasets](https://huggingface.co/docs/datasets/) library. Simply install the datasets library and run `import datasets; ds = load_dataset("usc-isi/WikiConvert")`.
+**Wiki-Convert**: A novel dataset of Wikipedia sentences annotated with numbers. The easiest way to get the data is via [Huggingface Datasets](https://huggingface.co/docs/datasets/) library. Simply install the datasets library and run: 
+```python3
+from datasets import load_dataset
+ds = load_dataset("usc-isi/WikiConvert")
+```
 
 Example:
 | id | comment | offset | length | number |
@@ -31,11 +35,11 @@ You may also retrieve a larger, unprocessed version of the data at [this link](h
 ## Code
 
 **train.py:** model description and training
-```
+```bash
 nice python train.py --batch-size 256 --gpus 0, --tsamples 100_000 --dsamples 10_000 --max_epochs 10 --enc exp --hidden 200 --accumulate_grad_batches 4 --seed 0 --dataset WC
 ```
 **eval.py:** reports perplexity and hit@k scores
-```
+```bash
 nice python eval.py --limit 10_000 --ckpt checkpoints/read-WC-def-adj-noun/epoch=9.ckpt --maxtoks 150 --batch-size 128 --device 0
 ```
 **dataset.py:** tokenized dataset description
