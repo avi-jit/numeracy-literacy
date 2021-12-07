@@ -30,7 +30,7 @@ The dataset sizes are as follows:
 | # examples | 739583 | 92447 | 92449 |
 | file size (MBs) | 169 | 20.9 | 20.5 |
 
-You may also retrieve a larger, unprocessed version of the data at [this link](https://drive.google.com/drive/folders/1FINtp5yC8J-ObLZ8p1Q0Oij9ttav1w91?usp=sharing).
+If you prefer the `NUM` and `UNIT` annotations as described in the paper, [here](https://drive.google.com/file/d/1Jqtv70cwk6yZsMosHjKTbIm0snHTovkD/view?usp=sharing) is a 233 MB json file. You may also retrieve a larger, unprocessed version of the data at [this link](https://drive.google.com/drive/folders/1FINtp5yC8J-ObLZ8p1Q0Oij9ttav1w91?usp=sharing).
 
 ## Code
 
